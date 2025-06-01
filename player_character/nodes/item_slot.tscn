@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq2qg1y2emxcl"]
+
+[ext_resource type="Script" uid="uid://dpkuqxa7sdb6c" path="res://item_slot.gd" id="1_7i3px"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7i3px"]
+radius = 2.23607
+
+[node name="ItemSlot" type="Area2D"]
+script = ExtResource("1_7i3px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7i3px")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://covw50fl6aguy"]
+
+[ext_resource type="Script" uid="uid://dak81nomg1ep8" path="res://level_addons/scripts/player_button.gd" id="1_33y86"]
+[ext_resource type="Texture2D" uid="uid://cghf4rd7s2no4" path="res://level_addons/sprites/button.png" id="2_a2ojc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uqmq5"]
+radius = 7.0
+
+[node name="PlayerButton" type="Area2D"]
+y_sort_enabled = true
+script = ExtResource("1_33y86")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_uqmq5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_a2ojc")
+hframes = 6
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

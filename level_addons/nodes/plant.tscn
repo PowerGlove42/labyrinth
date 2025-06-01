@@ -1,0 +1,124 @@
+[gd_scene load_steps=9 format=3 uid="uid://y8ul7khk084s"]
+
+[ext_resource type="Script" uid="uid://c8xshoeesw7a3" path="res://level_addons/scripts/plant.gd" id="1_mepi3"]
+[ext_resource type="Texture2D" uid="uid://c8n8g6176bujj" path="res://level_addons/sprites/shadow_medium.png" id="2_4egx2"]
+[ext_resource type="Texture2D" uid="uid://cg7xeu6jue8h8" path="res://level_addons/sprites/plant.png" id="2_nx6qj"]
+
+[sub_resource type="Animation" id="Animation_nx6qj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_mepi3"]
+resource_name = "bite"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.766667, 0.833333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_4egx2"]
+resource_name = "die"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.966667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"despawn"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4egx2"]
+_data = {
+&"RESET": SubResource("Animation_nx6qj"),
+&"bite": SubResource("Animation_mepi3"),
+&"die": SubResource("Animation_4egx2")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6gen5"]
+radius = 2.0
+height = 6.0
+
+[node name="Plant" type="Area2D" groups=["enemies"]]
+y_sort_enabled = true
+script = ExtResource("1_mepi3")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+position = Vector2(-1, 4)
+texture = ExtResource("2_4egx2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["enemies"]]
+texture = ExtResource("2_nx6qj")
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4egx2")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -2)
+shape = SubResource("CapsuleShape2D_6gen5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

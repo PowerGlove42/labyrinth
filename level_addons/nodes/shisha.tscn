@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://b5xmt4n2k2vdf"]
+
+[ext_resource type="Texture2D" uid="uid://i618ov0t76gt" path="res://level_addons/sprites/goldene_shisha.png" id="1_7igrg"]
+[ext_resource type="Script" uid="uid://chg1t3qhdg0xg" path="res://level_addons/scripts/shisha.gd" id="1_cbujq"]
+[ext_resource type="Texture2D" uid="uid://d2eynmipun8nw" path="res://level_addons/sprites/smoke.png" id="3_owcbr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cbujq"]
+radius = 2.0
+height = 14.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkjhp"]
+atlas = ExtResource("3_owcbr")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx01n"]
+atlas = ExtResource("3_owcbr")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8u2yh"]
+atlas = ExtResource("3_owcbr")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gm6v"]
+atlas = ExtResource("3_owcbr")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wp1s"]
+atlas = ExtResource("3_owcbr")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3p442"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkjhp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx01n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8u2yh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gm6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wp1s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Shisha" type="Area2D"]
+script = ExtResource("1_cbujq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_cbujq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7igrg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, -11)
+sprite_frames = SubResource("SpriteFrames_3p442")
+frame_progress = 0.532405
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

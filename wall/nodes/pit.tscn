@@ -1,0 +1,148 @@
+[gd_scene load_steps=21 format=3 uid="uid://briqj4iodibe8"]
+
+[ext_resource type="Script" uid="uid://ba2xixj4hjqu6" path="res://wall/scripts/pit.gd" id="1_h3w7g"]
+[ext_resource type="Texture2D" uid="uid://bs6usqr5b2i6t" path="res://wall/sprites/pit.png" id="2_ohcjo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3w7g"]
+atlas = ExtResource("2_ohcjo")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohcjo"]
+atlas = ExtResource("2_ohcjo")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cu14r"]
+atlas = ExtResource("2_ohcjo")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0blo7"]
+atlas = ExtResource("2_ohcjo")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8rki"]
+atlas = ExtResource("2_ohcjo")
+region = Rect2(192, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5542j"]
+atlas = ExtResource("2_ohcjo")
+region = Rect2(208, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1m5j"]
+atlas = ExtResource("2_ohcjo")
+region = Rect2(224, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhmbb"]
+atlas = ExtResource("2_ohcjo")
+region = Rect2(240, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_883tx"]
+atlas = ExtResource("2_ohcjo")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vewr"]
+atlas = ExtResource("2_ohcjo")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxuia"]
+atlas = ExtResource("2_ohcjo")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ex8fb"]
+atlas = ExtResource("2_ohcjo")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swb57"]
+atlas = ExtResource("2_ohcjo")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbyot"]
+atlas = ExtResource("2_ohcjo")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xgg0"]
+atlas = ExtResource("2_ohcjo")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqne6"]
+atlas = ExtResource("2_ohcjo")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_02n8w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3w7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohcjo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cu14r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0blo7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8rki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5542j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1m5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhmbb")
+}],
+"loop": true,
+"name": &"bridge",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_883tx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vewr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxuia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ex8fb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swb57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbyot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xgg0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqne6")
+}],
+"loop": true,
+"name": &"no_bridge",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oab7m"]
+radius = 1.0
+
+[node name="Pit" type="Area2D"]
+script = ExtResource("1_h3w7g")
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_02n8w")
+animation = &"no_bridge"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_oab7m")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -7)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

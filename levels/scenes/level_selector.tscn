@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfqs4hxq1nab5"]
+
+[ext_resource type="PackedScene" uid="uid://bkoao5djulk8y" path="res://levels/scenes/level_button.tscn" id="1_sl75w"]
+[ext_resource type="Texture2D" uid="uid://bv382u0rhuhw3" path="res://levels/sprites/controls.png" id="2_v20lp"]
+
+[node name="LevelSelector" type="Node2D"]
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_right = 400.0
+offset_bottom = 136.0
+
+[node name="TestLevel" parent="GridContainer" instance=ExtResource("1_sl75w")]
+layout_mode = 2
+text = "test_level"
+level_path = "uid://dgtlboaomyicv"
+
+[node name="Level3" parent="GridContainer" instance=ExtResource("1_sl75w")]
+layout_mode = 2
+text = "Level 3"
+level_path = "uid://g3xp3ao8sx2x"
+
+[node name="Level1" parent="GridContainer" instance=ExtResource("1_sl75w")]
+layout_mode = 2
+level_path = "uid://box2vgk5pllal"
+
+[node name="Level2" parent="GridContainer" instance=ExtResource("1_sl75w")]
+layout_mode = 2
+text = "Level 2"
+level_path = "uid://ci2ns0po2sxei"
+
+[node name="Level4" parent="GridContainer" instance=ExtResource("1_sl75w")]
+layout_mode = 2
+text = "Level 4"
+level_path = "uid://bav3rf3bkntsl"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(253, 222)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_v20lp")

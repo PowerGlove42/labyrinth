@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd7wy10cprbq3"]
+
+[ext_resource type="Texture2D" uid="uid://dmqna1js5wob3" path="res://level_addons/sprites/shadow_large.png" id="1_4ifbh"]
+[ext_resource type="Texture2D" uid="uid://b3ehgfjklckto" path="res://level_addons/sprites/ladder.png" id="1_576fb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ifbh"]
+size = Vector2(16, 16)
+
+[node name="Ladder" type="Area2D" groups=["items", "ladder"]]
+z_index = -1
+
+[node name="Shadow" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1, 1)
+texture = ExtResource("1_4ifbh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4ifbh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_576fb")
