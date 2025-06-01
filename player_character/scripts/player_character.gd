@@ -15,6 +15,7 @@ extends CharacterBody2D
 @onready var item_slot = $ItemSlot
 signal player_death
 var rooted:bool = false
+var smoke_time:float = 10
 
 func _ready() -> void:
 	smoke.play("default")
@@ -70,10 +71,13 @@ func win():
 	win_timer.start()
 
 func smoke_now():
-	smoke_timer.start()
-	smoke_warning_timer.start()
+	smoke_time *= 0.97
+	smoke_timer.start(smoke_time)
+	if smoke_time > 3:
+		smoke_warning_timer.start(smoke_time - 3)
+		warning_animation.play("none")
 	smoke.play("smoke")
-	warning_animation.play("none")
+
 
 func _on_win_delay_timeout() -> void:
 	call_deferred("quit")

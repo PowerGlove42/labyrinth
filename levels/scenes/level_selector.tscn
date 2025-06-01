@@ -6,18 +6,16 @@
 [node name="LevelSelector" type="Node2D"]
 
 [node name="GridContainer" type="GridContainer" parent="."]
-offset_right = 400.0
-offset_bottom = 136.0
+offset_left = 26.0
+offset_top = 23.0
+offset_right = 426.0
+offset_bottom = 229.0
+columns = 5
 
 [node name="TestLevel" parent="GridContainer" instance=ExtResource("1_sl75w")]
 layout_mode = 2
 text = "test_level"
 level_path = "uid://dgtlboaomyicv"
-
-[node name="Level3" parent="GridContainer" instance=ExtResource("1_sl75w")]
-layout_mode = 2
-text = "Level 3"
-level_path = "uid://g3xp3ao8sx2x"
 
 [node name="Level1" parent="GridContainer" instance=ExtResource("1_sl75w")]
 layout_mode = 2
@@ -28,10 +26,26 @@ layout_mode = 2
 text = "Level 2"
 level_path = "uid://ci2ns0po2sxei"
 
+[node name="Level3" parent="GridContainer" instance=ExtResource("1_sl75w")]
+layout_mode = 2
+text = "Level 3"
+level_path = "uid://g3xp3ao8sx2x"
+
 [node name="Level4" parent="GridContainer" instance=ExtResource("1_sl75w")]
 layout_mode = 2
 text = "Level 4"
 level_path = "uid://bav3rf3bkntsl"
+
+[node name="Level5" parent="GridContainer" instance=ExtResource("1_sl75w")]
+layout_mode = 2
+text = "Level 5
+"
+level_path = "uid://byyw3ogmw1t0i"
+
+[node name="room" parent="GridContainer" instance=ExtResource("1_sl75w")]
+layout_mode = 2
+text = "room"
+level_path = "uid://brnab2n26k72i"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(253, 222)

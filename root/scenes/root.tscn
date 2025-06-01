@@ -153,10 +153,10 @@ position = Vector2(151, -24)
 other_portal = NodePath("../Portal")
 
 [node name="Plant" parent="YSort" instance=ExtResource("6_lmem3")]
-position = Vector2(26, -25)
+position = Vector2(24, -22)
 
 [node name="Plant2" parent="YSort" instance=ExtResource("6_lmem3")]
-position = Vector2(41, -44)
+position = Vector2(39, -40)
 
 [node name="Portal3" parent="YSort" node_paths=PackedStringArray("other_portal") instance=ExtResource("5_c1pka")]
 position = Vector2(7, -72)
@@ -181,7 +181,7 @@ zoom = Vector2(2.5, 2.5)
 position_smoothing_enabled = true
 
 [node name="Plant3" parent="YSort" instance=ExtResource("6_lmem3")]
-position = Vector2(-23, 16)
+position = Vector2(-24, 23)
 
 [node name="Shisha" parent="YSort" instance=ExtResource("8_ngbsc")]
 position = Vector2(-24, 36)

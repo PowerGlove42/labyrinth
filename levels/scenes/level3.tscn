@@ -187,10 +187,10 @@ position = Vector2(152, -53)
 target = NodePath("../Plant")
 
 [node name="Plant" parent="YSort" instance=ExtResource("7_m6r0u")]
-position = Vector2(122, 14)
+position = Vector2(118, 17)
 
 [node name="Plant2" parent="YSort" instance=ExtResource("7_m6r0u")]
-position = Vector2(-23, 2)
+position = Vector2(-26, 14)
 
 [node name="PlayerButton5" parent="YSort" node_paths=PackedStringArray("target") instance=ExtResource("8_4vk71")]
 position = Vector2(-26, -23)
@@ -201,19 +201,39 @@ position = Vector2(-6, -23)
 target = NodePath("../Plant2")
 
 [node name="Plant3" parent="YSort" instance=ExtResource("7_m6r0u")]
-position = Vector2(9, -75)
+position = Vector2(8, -69)
 
 [node name="Plant4" parent="YSort" instance=ExtResource("7_m6r0u")]
-position = Vector2(38, -15)
+position = Vector2(38, -5)
 
-[node name="PlayerCharacter" parent="YSort" node_paths=PackedStringArray("respawn_location") instance=ExtResource("5_2c3eh")]
+[node name="PlayerCharacter" parent="YSort" instance=ExtResource("5_2c3eh")]
 z_index = 1
-position = Vector2(-17, -11)
-respawn_location = NodePath("")
+position = Vector2(-16, -3)
 
 [node name="Camera2D" type="Camera2D" parent="YSort/PlayerCharacter"]
 position = Vector2(-1, 0)
 zoom = Vector2(2.5, 2.5)
 position_smoothing_enabled = true
 
+[connection signal="body_entered" from="Coins/Coin" to="Coins/Coin" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@332091" to="Coins/@Area2D@332091" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@332092" to="Coins/@Area2D@332092" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@332093" to="Coins/@Area2D@332093" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@332094" to="Coins/@Area2D@332094" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@332095" to="Coins/@Area2D@332095" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@332096" to="Coins/@Area2D@332096" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@332097" to="Coins/@Area2D@332097" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@332098" to="Coins/@Area2D@332098" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@332099" to="Coins/@Area2D@332099" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@332100" to="Coins/@Area2D@332100" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@332101" to="Coins/@Area2D@332101" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@332102" to="Coins/@Area2D@332102" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@332103" to="Coins/@Area2D@332103" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@332104" to="Coins/@Area2D@332104" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@332105" to="Coins/@Area2D@332105" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@332106" to="Coins/@Area2D@332106" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@332107" to="Coins/@Area2D@332107" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@332108" to="Coins/@Area2D@332108" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@332109" to="Coins/@Area2D@332109" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@332110" to="Coins/@Area2D@332110" method="_on_body_entered"]
 [connection signal="player_death" from="YSort/PlayerCharacter" to="." method="_on_player_character_player_death"]
