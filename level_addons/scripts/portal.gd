@@ -11,6 +11,7 @@ enum animations {
 @export var other_portal:Node2D = self
 @export var current_animation:animations = animations.black_white
 @onready var animation_player = $AnimationPlayer
+@onready var line = $Line2D
 var recieved:bool = false
 var visited:bool = false
 
@@ -33,6 +34,8 @@ func change_anim(number:int):
 
 func _ready() -> void:
 	change_anim(current_animation)
+	if other_portal:
+		line.update_line(other_portal)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player_character"):
@@ -46,6 +49,7 @@ func _on_body_entered(body: Node2D) -> void:
 func recieve():
 	recieved = true
 
+
 func _on_body_exited(body: Node2D) -> void:
 	recieved = false
 
@@ -56,6 +60,9 @@ func trigger(next:Node2D = other_portal):
 			current_animation = other_portal.current_animation
 			change_anim(current_animation)
 			update(other_portal)
+			line.update_line(other_portal)
+
+
 
 func update(origin:Area2D = self, depth:int = 5):
 	if depth > 0:

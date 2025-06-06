@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dth3s4vnhnlqi"]
+[gd_scene load_steps=7 format=3 uid="uid://dth3s4vnhnlqi"]
 
 [ext_resource type="Script" uid="uid://dufun5jl5r4lw" path="res://level_addons/scripts/player_toggle_button.gd" id="1_qqjua"]
 [ext_resource type="Texture2D" uid="uid://cg6ua2y0gy0h" path="res://level_addons/sprites/player_toggle_button.png" id="2_qqjua"]
+[ext_resource type="Texture2D" uid="uid://cg3wqh4w007un" path="res://level_addons/sprites/yellow_path.png" id="3_f33tp"]
+[ext_resource type="Script" uid="uid://dcwmu704qbytb" path="res://level_addons/scripts/line.gd" id="4_f33tp"]
+[ext_resource type="Texture2D" uid="uid://bq42gds3emv32" path="res://level_addons/sprites/blue_path.png" id="5_8tn5y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uqmq5"]
 radius = 7.0
@@ -16,6 +19,18 @@ shape = SubResource("CircleShape2D_uqmq5")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_qqjua")
 hframes = 2
+
+[node name="YellowLine" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0)
+texture = ExtResource("3_f33tp")
+texture_mode = 1
+script = ExtResource("4_f33tp")
+
+[node name="BlueLine" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0)
+texture = ExtResource("5_8tn5y")
+texture_mode = 1
+script = ExtResource("4_f33tp")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

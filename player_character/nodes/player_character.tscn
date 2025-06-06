@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://d0hfh25fdaja6"]
+[gd_scene load_steps=41 format=3 uid="uid://d0hfh25fdaja6"]
 
 [ext_resource type="Script" uid="uid://c6ryarxrpngfa" path="res://player_character/scripts/player_character.gd" id="1_h5pfc"]
 [ext_resource type="Texture2D" uid="uid://dmqna1js5wob3" path="res://level_addons/sprites/shadow_large.png" id="3_2x44b"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://cghpksan6c2s5" path="res://player_character/audio/soundtrack.mp3" id="6_h5pfc"]
 [ext_resource type="AudioStream" uid="uid://cp7cxoqxsu81" path="res://player_character/audio/walk.mp3" id="7_kgc6p"]
 [ext_resource type="PackedScene" uid="uid://dq2qg1y2emxcl" path="res://player_character/nodes/item_slot.tscn" id="8_2x44b"]
+[ext_resource type="PackedScene" uid="uid://d2fg1m2l7b7ui" path="res://player_character/nodes/lung.tscn" id="9_lwqcy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_56306"]
 radius = 7.77778
@@ -441,6 +442,14 @@ stream = ExtResource("7_kgc6p")
 
 [node name="ItemSlot" parent="." instance=ExtResource("8_2x44b")]
 position = Vector2(0, -8)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.5, 2.5)
+position_smoothing_enabled = true
+
+[node name="Lung" parent="." instance=ExtResource("9_lwqcy")]
+z_index = 100
+position = Vector2(-68, -47)
 
 [connection signal="animation_finished" from="Smoke" to="." method="_on_smoke_animation_finished"]
 [connection signal="timeout" from="WinDelay" to="." method="_on_win_delay_timeout"]

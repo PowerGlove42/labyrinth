@@ -13,6 +13,8 @@ extends CharacterBody2D
 @onready var walk_sound = $Walk
 @onready var soundtrack = $Soundtrack
 @onready var item_slot = $ItemSlot
+@onready var camera = $Camera2D
+@onready var lung = $Lung
 signal player_death
 var rooted:bool = false
 var smoke_time:float = 10
@@ -28,9 +30,14 @@ func _process(delta: float) -> void:
 		smoke_now()
 	if Input.is_action_just_pressed("exit"):
 		call_deferred("quit")
+	if Input.is_action_just_pressed("drop"):
+		zoom_out(true)
+	elif Input.is_action_just_released("drop"):
+		zoom_out(false)
 	pass
 
 func _physics_process(delta: float) -> void:
+	lung.global_position = get_viewport().get_camera_2d().get_screen_center_position() - Vector2(60, 40)
 	var input_vector = Input.get_vector("left", "right", "up", "down", -1)
 	if rooted:
 		velocity = Vector2.ZERO
@@ -51,6 +58,16 @@ func _physics_process(delta: float) -> void:
 	animation_tree.set("parameters/blend_position", velocity.normalized())
 	move_and_slide()
 
+func zoom_out(val:bool = false):
+	if val:
+		camera.zoom = Vector2(1, 1)
+		camera.global_position = Vector2.ZERO
+		rooted = true
+	else:
+		camera.zoom = Vector2(2.5, 2.5)
+		camera.position = Vector2.ZERO
+		rooted = false
+
 func quit():
 	get_tree().change_scene_to_file(level_selector)
 
@@ -67,17 +84,23 @@ func teleport(target:Node2D):
 
 func win():
 	rooted = true
+	smoke_timer.stop()
 	smoke.play("smoke")
 	win_timer.start()
 
 func smoke_now():
-	smoke_time *= 0.97
-	smoke_timer.start(smoke_time)
-	if smoke_time > 3:
-		smoke_warning_timer.start(smoke_time - 3)
-		warning_animation.play("none")
-	smoke.play("smoke")
-
+	if smoke.animation == "smoke":
+		pass
+	else:
+		smoke_time *= 0.97
+		if smoke_time > 3:
+			smoke_warning_timer.start(smoke_time - 3)
+			warning_animation.play("none")
+			lung.update(10 - 3, smoke_time - 3,)
+		else:
+			lung.update(1, 0)
+		smoke_timer.start(smoke_time)
+		smoke.play("smoke")
 
 func _on_win_delay_timeout() -> void:
 	call_deferred("quit")
