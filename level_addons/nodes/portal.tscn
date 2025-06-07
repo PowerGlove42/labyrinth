@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cq3p18u1axdyi"]
+[gd_scene load_steps=16 format=3 uid="uid://cq3p18u1axdyi"]
 
 [ext_resource type="Texture2D" uid="uid://cuptoqcfqdoum" path="res://level_addons/sprites/portal.png" id="1_fgige"]
 [ext_resource type="Script" uid="uid://beki8wh0ldn8c" path="res://level_addons/scripts/portal.gd" id="2_t1045"]
@@ -154,6 +154,9 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_fgige"]
 radius = 3.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_u3md7"]
+radius = 19.105
+
 [node name="Portal" type="Area2D" groups=["portal"]]
 y_sort_enabled = true
 script = ExtResource("2_t1045")
@@ -177,5 +180,12 @@ texture = ExtResource("3_t1045")
 texture_mode = 1
 script = ExtResource("4_u3md7")
 
+[node name="Highlighter" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="Highlighter"]
+shape = SubResource("CircleShape2D_u3md7")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="body_entered" from="Highlighter" to="." method="_on_highlighter_body_entered"]
+[connection signal="body_exited" from="Highlighter" to="." method="_on_highlighter_body_exited"]

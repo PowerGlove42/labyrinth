@@ -36,6 +36,7 @@ func _ready() -> void:
 	change_anim(current_animation)
 	if other_portal:
 		line.update_line(other_portal)
+		idle()
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player_character"):
@@ -52,6 +53,7 @@ func recieve():
 
 func _on_body_exited(body: Node2D) -> void:
 	recieved = false
+	idle()
 
 func trigger(next:Node2D = other_portal):
 	if next:
@@ -69,3 +71,22 @@ func update(origin:Area2D = self, depth:int = 5):
 		current_animation = origin.current_animation
 		change_anim(current_animation)
 		other_portal.update(origin, depth -1)
+
+func highlight():
+	modulate.a = 1
+
+func idle():
+	if not recieved:
+		modulate.a = 0.5
+
+func _on_highlighter_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player_character"):
+		highlight()
+		if other_portal:
+			other_portal.highlight()
+
+func _on_highlighter_body_exited(body: Node2D) -> void:
+	if body.is_in_group("player_character"):
+		idle()
+		if other_portal:
+			other_portal.idle()

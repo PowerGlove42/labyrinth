@@ -30,9 +30,13 @@ func _process(delta: float) -> void:
 		smoke_now()
 	if Input.is_action_just_pressed("exit"):
 		call_deferred("quit")
-	if Input.is_action_just_pressed("drop"):
+	if Input.is_action_pressed("drop"):
 		zoom_out(true)
 	elif Input.is_action_just_released("drop"):
+		zoom_out(false)
+	if Input.is_action_pressed("zoom"):
+		zoom_out(true)
+	elif Input.is_action_just_released("zoom"):
 		zoom_out(false)
 	pass
 
