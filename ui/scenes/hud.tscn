@@ -13,14 +13,14 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="CoinCounter" type="Sprite2D" parent="Control" groups=["coin_counter"]]
-position = Vector2(22, 16)
+position = Vector2(30, 13)
 texture = ExtResource("1_itb64")
 script = ExtResource("1_aydmx")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/CoinCounter"]
-offset_left = -26.0
+offset_left = -17.0
 offset_top = -12.0
-offset_right = 14.0
+offset_right = 23.0
 offset_bottom = 28.0
 text = "0"
 horizontal_alignment = 2

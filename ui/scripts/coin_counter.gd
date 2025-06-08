@@ -3,6 +3,6 @@ var coins: int = 0
 @onready var text = $RichTextLabel
 
 func count():
-	if coins < 99:
+	if coins < 9999:
 		coins += 1
 		text.text = str(coins)
