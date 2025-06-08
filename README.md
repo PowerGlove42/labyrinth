@@ -37,7 +37,6 @@ But there's a catch:
 | --------- | --------------------------------------------------------------------------------------------- |
 | `W A S D` | Move                                                                                          |
 | `Shift`   | Sprint                                                     |
-
 | `Space`   | Smoke (resets your craving timer)                                                             |
 | `E`       | Zoom out                                                                                      |
 | `Q`       | Zoom out **+** highlight connections between buttons, portals, and plants *(currently janky)* |
