@@ -178,6 +178,7 @@ shape = SubResource("CircleShape2D_fgige")
 points = PackedVector2Array(0, 0)
 texture = ExtResource("3_t1045")
 texture_mode = 1
+joint_mode = 1
 script = ExtResource("4_u3md7")
 
 [node name="Highlighter" type="Area2D" parent="."]
