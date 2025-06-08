@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://brnab2n26k72i"]
+[gd_scene load_steps=22 format=4 uid="uid://brnab2n26k72i"]
 
 [ext_resource type="Script" uid="uid://4mcqtus17n2p" path="res://levels/scripts/level_1.gd" id="1_syahp"]
 [ext_resource type="Texture2D" uid="uid://bqd0hopucpaem" path="res://wall/sprites/dirt.png" id="2_2ga38"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://covw50fl6aguy" path="res://level_addons/nodes/player_button.tscn" id="9_p3tp1"]
 [ext_resource type="PackedScene" uid="uid://dth3s4vnhnlqi" path="res://level_addons/nodes/player_toggle_button.tscn" id="10_ykegx"]
 [ext_resource type="PackedScene" uid="uid://cq3p18u1axdyi" path="res://level_addons/nodes/portal.tscn" id="11_wqrpd"]
+[ext_resource type="PackedScene" uid="uid://btqxdapwdqfjs" path="res://ui/scenes/hud.tscn" id="13_p3tp1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_48tln"]
 texture = ExtResource("2_2ga38")
@@ -203,5 +204,7 @@ position = Vector2(69, 15)
 other_portal = NodePath("../Portal")
 
 [node name="PlayerCharacter" parent="YSort" instance=ExtResource("6_uq5c5")]
+
+[node name="HUD" parent="." instance=ExtResource("13_p3tp1")]
 
 [connection signal="player_death" from="YSort/PlayerCharacter" to="." method="_on_player_character_player_death"]

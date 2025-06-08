@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://4kw7nx2bxox2"]
+[gd_scene load_steps=19 format=4 uid="uid://4kw7nx2bxox2"]
 
 [ext_resource type="Script" uid="uid://4mcqtus17n2p" path="res://levels/scripts/level_1.gd" id="1_eogn2"]
 [ext_resource type="Texture2D" uid="uid://bqd0hopucpaem" path="res://wall/sprites/dirt.png" id="2_8fqt7"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b5xmt4n2k2vdf" path="res://level_addons/nodes/shisha.tscn" id="7_pr51b"]
 [ext_resource type="PackedScene" uid="uid://cq3p18u1axdyi" path="res://level_addons/nodes/portal.tscn" id="8_fwsml"]
 [ext_resource type="PackedScene" uid="uid://covw50fl6aguy" path="res://level_addons/nodes/player_button.tscn" id="9_ijdhe"]
+[ext_resource type="PackedScene" uid="uid://btqxdapwdqfjs" path="res://ui/scenes/hud.tscn" id="10_8fqt7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_48tln"]
 texture = ExtResource("2_8fqt7")
@@ -190,5 +191,7 @@ trigger_value = NodePath("../Portal3")
 [node name="Portal4" parent="YSort" node_paths=PackedStringArray("other_portal") instance=ExtResource("8_fwsml")]
 position = Vector2(-15, -40)
 other_portal = NodePath("../Portal")
+
+[node name="HUD" parent="." instance=ExtResource("10_8fqt7")]
 
 [connection signal="player_death" from="YSort/PlayerCharacter" to="." method="_on_player_character_player_death"]

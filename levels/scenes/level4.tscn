@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bav3rf3bkntsl"]
+[gd_scene load_steps=21 format=4 uid="uid://bav3rf3bkntsl"]
 
 [ext_resource type="Script" uid="uid://4mcqtus17n2p" path="res://levels/scripts/level_1.gd" id="1_2tsfu"]
 [ext_resource type="Texture2D" uid="uid://bqd0hopucpaem" path="res://wall/sprites/dirt.png" id="2_1agfa"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://covw50fl6aguy" path="res://level_addons/nodes/player_button.tscn" id="9_w1m3v"]
 [ext_resource type="PackedScene" uid="uid://y8ul7khk084s" path="res://level_addons/nodes/plant.tscn" id="10_r71sk"]
 [ext_resource type="PackedScene" uid="uid://cq3p18u1axdyi" path="res://level_addons/nodes/portal.tscn" id="11_goed6"]
+[ext_resource type="PackedScene" uid="uid://btqxdapwdqfjs" path="res://ui/scenes/hud.tscn" id="12_r71sk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_48tln"]
 texture = ExtResource("2_1agfa")
@@ -148,28 +149,32 @@ script = ExtResource("1_2tsfu")
 
 [node name="Ground" type="TileMapLayer" parent="."]
 z_index = -2
+position = Vector2(-61, 39)
 tile_map_data = PackedByteArray("AAAAAAIAAAAAAAAAAAD//wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD9//3/AAAAAAAAAAD9//7/AAAAAAAAAAD9////AAAAAAAAAAD9/wAAAAAAAAAAAAD9/wEAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAIAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAIAAAAAAAAAAAAIAAIAAAAAAAAAAAAHAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAABAAMAAAAAAAAAAAAAAAMAAAAAAAAAAAD//wMAAAAAAAAAAAD+/wMAAAAAAAAAAAD9/wMAAAAAAAAAAAAKAAMAAAAAAAAAAAAKAAIAAAAAAAAAAAAKAAEAAAAAAAAAAAAKAAAAAAAAAAAAAAAKAP//AAAAAAAAAAAKAP7/AAAAAAAAAAAKAP3/AAAAAAAAAAAKAPz/AAAAAAAAAAAKAPv/AAAAAAAAAAAKAPn/AAAAAAAAAAAKAPj/AAAAAAAAAAAKAPr/AAAAAAAAAAAJAPj/AAAAAAAAAAAIAPj/AAAAAAAAAAAHAPj/AAAAAAAAAAAGAPj/AAAAAAAAAAAFAPj/AAAAAAAAAAAEAPj/AAAAAAAAAAADAPj/AQAAAAAAAQACAPj/AAAAAAAAAAABAPj/AQAAAAAAAQAAAPj/AAAAAAAAAAD///j/AAAAAAAAAAD+//j/AAAAAAAAAAD9//j/AAAAAAAAAAD9//n/AAAAAAAAAAD9//r/AAAAAAAAAAD9//v/AAAAAAAAAAD9//z/AAAAAAAAAAAJAAEAAAAAAAAAAAAJAAAAAAAAAAAAAAAJAP//AAAAAAAAAAAJAP7/AAAAAAAAAAAJAP3/AAAAAAAAAAAJAPz/AAAAAAAAAAAJAPv/AQAAAAAAAQAJAPr/AAAAAAAAAAAJAPn/AAAAAAAAAAAIAAEAAAAAAAAAAAAIAAAAAAAAAAAAAAAIAP//AAAAAAAAAAAIAP7/AAAAAAAAAAAIAP3/AAAAAAAAAAAIAPz/AAAAAAAAAAAIAPv/AAAAAAAAAAAIAPr/AAAAAAAAAAAIAPn/AAAAAAAAAAAHAAEAAQAAAAAAAQAHAAAAAAAAAAAAAAAHAP//AAAAAAAAAAAHAP7/AAAAAAAAAAAHAP3/AAAAAAAAAAAHAPz/AAAAAAAAAAAHAPv/AAAAAAAAAAAHAPr/AAAAAAAAAAAHAPn/AAAAAAAAAAAGAAEAAAAAAAAAAAAGAAAAAAAAAAAAAAAGAP//AAAAAAAAAAAGAP7/AAAAAAAAAAAGAP3/AAAAAAAAAAAGAPz/AAAAAAAAAAAGAPv/AAAAAAAAAAAGAPr/AAAAAAAAAAAGAPn/AAAAAAAAAAAFAAEAAAAAAAAAAAAFAAAAAAAAAAAAAAAFAP//AAAAAAAAAAAFAP7/AAAAAAAAAAAFAP3/AAAAAAAAAAAFAPz/AAAAAAAAAAAFAPv/AAAAAAAAAAAFAPr/AAAAAAAAAAAFAPn/AAAAAAAAAAAEAAEAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAP//AAAAAAAAAAAEAP7/AAAAAAAAAAAEAP3/AAAAAAAAAAAEAPz/AAAAAAAAAAAEAPr/AAAAAAAAAAAEAPn/AAAAAAAAAAADAAEAAAAAAAAAAAADAAAAAAAAAAAAAAADAP//AAAAAAAAAAADAP7/AAAAAAAAAAADAP3/AAAAAAAAAAADAPr/AAAAAAAAAAADAPn/AAAAAAAAAAACAAEAAAAAAAAAAAACAAAAAAAAAAAAAAACAP//AAAAAAAAAAACAP7/AAAAAAAAAAACAP3/AAAAAAAAAAACAPr/AAAAAAAAAAACAPn/AAAAAAAAAAABAAEAAAAAAAAAAAABAAAAAAAAAAAAAAABAP//AAAAAAAAAAABAP7/AAAAAAAAAAABAP3/AAAAAAAAAAABAPv/AAAAAAAAAAABAPr/AAAAAAAAAAABAPn/AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAP7/AAAAAAAAAAAAAP3/AAAAAAAAAAAAAPz/AAAAAAAAAAAAAPv/AAAAAAAAAAAAAPr/AAAAAAAAAAAAAPn/AQAAAAAAAQD//wEAAAAAAAAAAAD//wAAAAAAAAAAAAD/////AAAAAAAAAAD///7/AAAAAAAAAAD///3/AAAAAAAAAAD///z/AAAAAAAAAAD///v/AAAAAAAAAAD///r/AAAAAAAAAAD///n/AAAAAAAAAAD+/wEAAQAAAAAAAQD+/wAAAAAAAAAAAAD+////AAAAAAAAAAD+//7/AAAAAAAAAAD+//3/AAAAAAAAAAD+//z/AAAAAAAAAAD+//v/AAAAAAAAAAD+//r/AAAAAAAAAAD+//n/AAAAAAAAAAD9//f/AAAAAAAAAAD+//f/AAAAAAAAAAD///f/AAAAAAAAAAAAAPf/AAAAAAAAAAABAPf/AAAAAAAAAAACAPf/AAAAAAAAAAADAPf/AAAAAAAAAAAEAPf/AAAAAAAAAAAFAPf/AAAAAAAAAAAGAPf/AAAAAAAAAAAHAPf/AAAAAAAAAAAIAPf/AAAAAAAAAAAJAPf/AAAAAAAAAAAKAPf/AAAAAAAAAAACAPv/AAAAAAAAAAADAPv/AAAAAAAAAAAEAPv/AAAAAAAAAAADAPz/AAAAAAAAAAACAPz/AAAAAAAAAAABAPz/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_pwhp1")
 
 [node name="Walls" type="TileMapLayer" parent="."]
+position = Vector2(-61, 39)
 tile_map_data = PackedByteArray("AAD9/wMAAQAAAAIAAAD9/wIAAQAAAAEAAAD9/wEAAQAAAAEAAAD9/wAAAQAAAAEAAAD9////AQAAAAEAAAD9//7/AQAAAAEAAAD9//3/AQAAAAEAAAD9//z/AQAAAAEAAAD9//v/AQAAAAEAAAD9//r/AQAAAAEAAAD9//j/AQAAAAEAAAD9//f/AQAAAAAAAAD+//f/AQABAAIAAAD///f/AQABAAIAAAAAAPf/AQABAAIAAAABAPf/AQABAAIAAAACAPf/AQABAAIAAAADAPf/AQABAAIAAAAEAPf/AQABAAIAAAAFAPf/AQAEAAEAAAAGAPf/AQABAAIAAAAHAPf/AQABAAIAAAAIAPf/AQABAAIAAAAKAPf/AQACAAAAAAAKAPj/AQAAAAEAAAAKAPn/AQAAAAEAAAAKAPr/AQAAAAEAAAAKAPv/AQAAAAEAAAAKAPz/AQAAAAEAAAAKAP3/AQAAAAEAAAAKAP7/AQAAAAEAAAAKAP//AQAAAAEAAAAKAAAAAQAAAAEAAAAKAAEAAQAAAAEAAAAKAAIAAQAAAAEAAAAKAAMAAQACAAIAAAAJAAMAAQABAAIAAAAIAAMAAQABAAIAAAAHAAMAAQABAAIAAAAGAAMAAQAGAAEAAAAFAAMAAQABAAIAAAAEAAMAAQABAAIAAAADAAMAAQABAAIAAAACAAMAAQABAAIAAAABAAMAAQAGAAEAAAAAAAMAAQABAAIAAAD//wMAAQABAAIAAAAJAPf/AQABAAIAAAD+/wMAAQABAAIAAAD9//n/AQAAAAEAAAAGAPn/AQABAAIAAAAHAPn/AQABAAIAAAAIAPn/AQACAAAAAAAIAPr/AQAAAAEAAAAIAPv/AQAAAAEAAAAGAPv/AQACAAAAAAAGAPz/AQAAAAEAAAAGAP3/AQAFAAAAAAAGAP7/AQAEAAAAAAAGAP//AQAFAAAAAAAFAPv/AQABAAIAAAAEAPv/AQABAAIAAAADAPv/AQAAAAAAAAABAPv/AQAFAAIAAAAAAPv/AQABAAIAAAD///v/AQAEAAAAAAADAPz/AQAAAAEAAAADAP3/AQAFAAEAAAADAP7/AQAAAAEAAAADAP//AQAEAAAAAAAGAAAAAQAAAAEAAAAGAAEAAQAFAAAAAAAGAAIAAQAAAAEAAAAIAP//AQAAAAEAAAAIAAAAAQAAAAEAAAAIAAEAAQADAAEAAAADAAAAAQAAAAEAAAADAAEAAQAAAAIAAAABAAEAAQACAAAAAAABAAIAAQAAAAEAAAAEAAEAAQABAAIAAAAFAAEAAQABAAIAAAAEAP3/AQABAAIAAAAFAP3/AQABAAIAAAAEAP//AQABAAIAAAAFAP//AQABAAIAAAD//wEAAQAAAAIAAAD/////AQAAAAEAAAD//wAAAQAAAAEAAAAFAPj/AQAAAAEAAAAFAPn/AQAAAAIAAAACAPn/AQABAAIAAAADAPn/AQAFAAIAAAD///n/AQADAAAAAAD///r/AQAAAAEAAAABAPn/AQAEAAIAAAAIAPz/AQADAAEAAAAIAP7/AQACAAAAAAAHAP7/AQABAAIAAAD///7/AQAAAAEAAAD///3/AQAAAAEAAAD///z/AQAAAAEAAAABAP3/AQAAAAAAAAACAP3/AQABAAIAAAAAAAEAAQABAAIAAAABAP7/AQAAAAEAAAABAP//AQADAAEAAAA=")
 tile_set = SubResource("TileSet_usj6x")
 
 [node name="Coins" type="TileMapLayer" parent="."]
+position = Vector2(-61, 39)
 tile_map_data = PackedByteArray("AAD//wIAAAAAAAAAAQD+/wIAAAAAAAAAAQD+/wAAAAAAAAAAAQD+////AAAAAAAAAQD+//7/AAAAAAAAAQD+//3/AAAAAAAAAQD+//z/AAAAAAAAAQD+//v/AAAAAAAAAQD+//r/AAAAAAAAAQD+//n/AAAAAAAAAQD+//j/AAAAAAAAAQD///j/AAAAAAAAAQAAAPj/AAAAAAAAAQAAAPr/AAAAAAAAAQABAPr/AAAAAAAAAQACAPr/AAAAAAAAAQADAPr/AAAAAAAAAQAEAPr/AAAAAAAAAQACAPj/AAAAAAAAAQAEAPj/AAAAAAAAAQAEAPn/AAAAAAAAAQAFAPr/AAAAAAAAAQAGAPr/AAAAAAAAAQAJAPj/AAAAAAAAAQAJAPr/AAAAAAAAAQAJAPz/AAAAAAAAAQAHAPv/AAAAAAAAAQAHAPz/AAAAAAAAAQAHAP3/AAAAAAAAAQAIAP3/AAAAAAAAAQAJAP3/AAAAAAAAAQAJAP7/AAAAAAAAAQAJAP//AAAAAAAAAQAJAAAAAAAAAAAAAQAJAAEAAAAAAAAAAQAJAAIAAAAAAAAAAQAIAAIAAAAAAAAAAQAHAAIAAAAAAAAAAQAEAAIAAAAAAAAAAQADAAIAAAAAAAAAAQACAAIAAAAAAAAAAQACAP7/AAAAAAAAAQACAP//AAAAAAAAAQACAAAAAAAAAAAAAQACAAEAAAAAAAAAAQABAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAP//AAAAAAAAAQAAAP7/AAAAAAAAAQAAAP3/AAAAAAAAAQAAAPz/AAAAAAAAAQABAPz/AAAAAAAAAQACAPz/AAAAAAAAAQACAPv/AAAAAAAAAQAIAPj/AAAAAAAAAQA=")
 tile_set = SubResource("TileSet_ipcux")
 
 [node name="Ladder3" parent="." instance=ExtResource("8_5n5v5")]
-position = Vector2(101, -121)
+position = Vector2(40, -82)
 
 [node name="Ladder4" parent="." instance=ExtResource("8_5n5v5")]
-position = Vector2(118, -120)
+position = Vector2(57, -81)
 
 [node name="Ladder5" parent="." instance=ExtResource("8_5n5v5")]
-position = Vector2(120, -10)
+position = Vector2(59, 29)
 
 [node name="YSort" type="Node2D" parent="."]
 y_sort_enabled = true
+position = Vector2(-61, 39)
 
 [node name="Portal6" parent="YSort" node_paths=PackedStringArray("other_portal") instance=ExtResource("11_goed6")]
 position = Vector2(96, -24)
@@ -215,4 +220,73 @@ other_portal = NodePath("../Portal")
 [node name="PlayerCharacter" parent="YSort" instance=ExtResource("6_w1m3v")]
 position = Vector2(119, -89)
 
+[node name="HUD" parent="." instance=ExtResource("12_r71sk")]
+
+[connection signal="area_entered" from="Ground/Pit" to="Ground/Pit" method="_on_area_entered"]
+[connection signal="body_entered" from="Ground/Pit" to="Ground/Pit" method="_on_body_entered"]
+[connection signal="area_entered" from="Ground/@Area2D@143750" to="Ground/@Area2D@143750" method="_on_area_entered"]
+[connection signal="body_entered" from="Ground/@Area2D@143750" to="Ground/@Area2D@143750" method="_on_body_entered"]
+[connection signal="area_entered" from="Ground/@Area2D@143751" to="Ground/@Area2D@143751" method="_on_area_entered"]
+[connection signal="body_entered" from="Ground/@Area2D@143751" to="Ground/@Area2D@143751" method="_on_body_entered"]
+[connection signal="area_entered" from="Ground/@Area2D@143752" to="Ground/@Area2D@143752" method="_on_area_entered"]
+[connection signal="body_entered" from="Ground/@Area2D@143752" to="Ground/@Area2D@143752" method="_on_body_entered"]
+[connection signal="area_entered" from="Ground/@Area2D@143753" to="Ground/@Area2D@143753" method="_on_area_entered"]
+[connection signal="body_entered" from="Ground/@Area2D@143753" to="Ground/@Area2D@143753" method="_on_body_entered"]
+[connection signal="area_entered" from="Ground/@Area2D@143754" to="Ground/@Area2D@143754" method="_on_area_entered"]
+[connection signal="body_entered" from="Ground/@Area2D@143754" to="Ground/@Area2D@143754" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/Coin" to="Coins/Coin" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143755" to="Coins/@Area2D@143755" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143756" to="Coins/@Area2D@143756" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143757" to="Coins/@Area2D@143757" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143758" to="Coins/@Area2D@143758" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143759" to="Coins/@Area2D@143759" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143760" to="Coins/@Area2D@143760" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143761" to="Coins/@Area2D@143761" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143762" to="Coins/@Area2D@143762" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143763" to="Coins/@Area2D@143763" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143764" to="Coins/@Area2D@143764" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143765" to="Coins/@Area2D@143765" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143766" to="Coins/@Area2D@143766" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143767" to="Coins/@Area2D@143767" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143768" to="Coins/@Area2D@143768" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143769" to="Coins/@Area2D@143769" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143770" to="Coins/@Area2D@143770" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143771" to="Coins/@Area2D@143771" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143772" to="Coins/@Area2D@143772" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143773" to="Coins/@Area2D@143773" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143774" to="Coins/@Area2D@143774" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143775" to="Coins/@Area2D@143775" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143776" to="Coins/@Area2D@143776" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143777" to="Coins/@Area2D@143777" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143778" to="Coins/@Area2D@143778" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143779" to="Coins/@Area2D@143779" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143780" to="Coins/@Area2D@143780" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143781" to="Coins/@Area2D@143781" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143782" to="Coins/@Area2D@143782" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143783" to="Coins/@Area2D@143783" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143784" to="Coins/@Area2D@143784" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143785" to="Coins/@Area2D@143785" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143786" to="Coins/@Area2D@143786" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143787" to="Coins/@Area2D@143787" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143788" to="Coins/@Area2D@143788" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143789" to="Coins/@Area2D@143789" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143790" to="Coins/@Area2D@143790" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143791" to="Coins/@Area2D@143791" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143792" to="Coins/@Area2D@143792" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143793" to="Coins/@Area2D@143793" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143794" to="Coins/@Area2D@143794" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143795" to="Coins/@Area2D@143795" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143796" to="Coins/@Area2D@143796" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143797" to="Coins/@Area2D@143797" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143798" to="Coins/@Area2D@143798" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143799" to="Coins/@Area2D@143799" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143800" to="Coins/@Area2D@143800" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143801" to="Coins/@Area2D@143801" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143802" to="Coins/@Area2D@143802" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143803" to="Coins/@Area2D@143803" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143804" to="Coins/@Area2D@143804" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143805" to="Coins/@Area2D@143805" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143806" to="Coins/@Area2D@143806" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143807" to="Coins/@Area2D@143807" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/@Area2D@143808" to="Coins/@Area2D@143808" method="_on_body_entered"]
 [connection signal="player_death" from="YSort/PlayerCharacter" to="." method="_on_player_character_player_death"]

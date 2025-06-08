@@ -42,6 +42,11 @@ text = "Level 5
 "
 level_path = "uid://byyw3ogmw1t0i"
 
+[node name="Level6" parent="GridContainer" instance=ExtResource("1_sl75w")]
+layout_mode = 2
+text = "Level 6"
+level_path = "uid://c3l3g7g1bkici"
+
 [node name="room" parent="GridContainer" instance=ExtResource("1_sl75w")]
 layout_mode = 2
 text = "room"
