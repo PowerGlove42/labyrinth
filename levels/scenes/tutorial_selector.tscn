@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://daiibkdw8w33a"]
+
+[ext_resource type="PackedScene" uid="uid://bkoao5djulk8y" path="res://levels/scenes/level_button.tscn" id="1_6jkx5"]
+[ext_resource type="Texture2D" uid="uid://bv382u0rhuhw3" path="res://levels/sprites/controls.png" id="2_333m3"]
+
+[node name="LevelSelector" type="Node2D"]
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_left = 26.0
+offset_top = 23.0
+offset_right = 426.0
+offset_bottom = 229.0
+columns = 5
+
+[node name="Win" parent="GridContainer" instance=ExtResource("1_6jkx5")]
+layout_mode = 2
+text = "Win"
+level_path = "uid://ccwa07ldyotpa"
+
+[node name="Plant" parent="GridContainer" instance=ExtResource("1_6jkx5")]
+layout_mode = 2
+text = "Plant"
+level_path = "uid://dvobmnshoa5pa"
+
+[node name="Acid" parent="GridContainer" instance=ExtResource("1_6jkx5")]
+layout_mode = 2
+text = "Acid"
+level_path = "uid://no1l406tnfkv"
+
+[node name="Portals" parent="GridContainer" instance=ExtResource("1_6jkx5")]
+layout_mode = 2
+text = "Portals"
+level_path = "uid://bt60s42faxtqu"
+
+[node name="Portals2" parent="GridContainer" instance=ExtResource("1_6jkx5")]
+layout_mode = 2
+text = "Portals (again)"
+level_path = "uid://4kw7nx2bxox2"
+
+[node name="Toggle" parent="GridContainer" instance=ExtResource("1_6jkx5")]
+layout_mode = 2
+text = "Toggle"
+level_path = "uid://cs2q5s8cnvcke"
+
+[node name="room" parent="GridContainer" instance=ExtResource("1_6jkx5")]
+layout_mode = 2
+text = "room"
+level_path = "uid://brnab2n26k72i"
+
+[node name="LevelSelect" parent="GridContainer" instance=ExtResource("1_6jkx5")]
+layout_mode = 2
+text = "Levels"
+level_path = "uid://bfqs4hxq1nab5"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(253, 222)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_333m3")
