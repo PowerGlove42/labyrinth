@@ -24,12 +24,14 @@ hframes = 2
 points = PackedVector2Array(0, 0)
 texture = ExtResource("3_f33tp")
 texture_mode = 1
+joint_mode = 1
 script = ExtResource("4_f33tp")
 
 [node name="BlueLine" type="Line2D" parent="."]
 points = PackedVector2Array(0, 0)
 texture = ExtResource("5_8tn5y")
 texture_mode = 1
+joint_mode = 1
 script = ExtResource("4_f33tp")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
