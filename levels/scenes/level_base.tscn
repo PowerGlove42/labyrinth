@@ -157,13 +157,13 @@ tile_set = SubResource("TileSet_usj6x")
 position = Vector2(-59, 47)
 tile_set = SubResource("TileSet_ipcux")
 
-[node name="Shisha" parent="." instance=ExtResource("8_on4w5")]
-position = Vector2(15, 22)
-
 [node name="YSort" type="Node2D" parent="."]
 y_sort_enabled = true
 position = Vector2(-59, 47)
 
 [node name="PlayerCharacter" parent="YSort" instance=ExtResource("5_bej52")]
+
+[node name="Shisha" parent="YSort" instance=ExtResource("8_on4w5")]
+position = Vector2(74, -25)
 
 [connection signal="player_death" from="YSort/PlayerCharacter" to="." method="_on_player_character_player_death"]
