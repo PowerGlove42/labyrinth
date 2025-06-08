@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d0hfh25fdaja6" path="res://player_character/nodes/player_character.tscn" id="6_n0l3j"]
 [ext_resource type="PackedScene" uid="uid://b5xmt4n2k2vdf" path="res://level_addons/nodes/shisha.tscn" id="7_sf7lp"]
 [ext_resource type="PackedScene" uid="uid://cd7wy10cprbq3" path="res://level_addons/nodes/ladder.tscn" id="8_k0hwh"]
-[ext_resource type="PackedScene" uid="uid://btqxdapwdqfjs" path="res://ui/scenes/hud.tscn" id="9_116uo"]
+[ext_resource type="PackedScene" uid="uid://c5uybnu8lq3ok" path="res://ui/scenes/hud.tscn" id="9_116uo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_48tln"]
 texture = ExtResource("2_k0hwh")
@@ -174,6 +174,4 @@ position = Vector2(-67, 71)
 
 [node name="HUD" parent="." instance=ExtResource("9_116uo")]
 
-[connection signal="area_entered" from="Ground/Pit" to="Ground/Pit" method="_on_area_entered"]
-[connection signal="body_entered" from="Ground/Pit" to="Ground/Pit" method="_on_body_entered"]
 [connection signal="player_death" from="YSort/PlayerCharacter" to="." method="_on_player_character_player_death"]

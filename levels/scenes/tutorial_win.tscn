@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bveh6ddiisdpc" path="res://level_addons/nodes/coin.tscn" id="5_8qrhj"]
 [ext_resource type="PackedScene" uid="uid://b5xmt4n2k2vdf" path="res://level_addons/nodes/shisha.tscn" id="6_mt7tv"]
 [ext_resource type="PackedScene" uid="uid://d0hfh25fdaja6" path="res://player_character/nodes/player_character.tscn" id="7_4smru"]
-[ext_resource type="PackedScene" uid="uid://btqxdapwdqfjs" path="res://ui/scenes/hud.tscn" id="8_24kmr"]
+[ext_resource type="PackedScene" uid="uid://c5uybnu8lq3ok" path="res://ui/scenes/hud.tscn" id="8_24kmr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_48tln"]
 texture = ExtResource("2_060n3")
