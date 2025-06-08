@@ -49,6 +49,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 func recieve():
 	recieved = true
+	other_portal.highlight()
 
 
 func _on_body_exited(body: Node2D) -> void:
@@ -83,7 +84,7 @@ func _on_highlighter_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player_character"):
 		highlight()
 		if other_portal:
-			other_portal.highlight()
+			other_portal.call_deferred("highlight")
 
 func _on_highlighter_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player_character"):
