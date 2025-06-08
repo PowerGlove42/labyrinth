@@ -111,7 +111,6 @@ func _on_win_delay_timeout() -> void:
 func _on_smoke_timer_timeout() -> void:
 	kill()
 
-
 func _on_smoke_warning_timer_timeout() -> void:
 	warning_animation.play("warn")
 
