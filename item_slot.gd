@@ -20,6 +20,5 @@ func _on_area_entered(area: Area2D) -> void:
 
 func _on_child_exiting_tree(node: Node) -> void:
 	if node.is_in_group("items"):
-		print ("in items")
 		occupied = false
 		item = null
