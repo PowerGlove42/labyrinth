@@ -36,7 +36,8 @@ But there's a catch:
 | Key       | Action                                                                                        |
 | --------- | --------------------------------------------------------------------------------------------- |
 | `W A S D` | Move                                                                                          |
-| `Shift`   | Sprint (for a short burst of speed)                                                           |
+| `Shift`   | Sprint                                                     |
+
 | `Space`   | Smoke (resets your craving timer)                                                             |
 | `E`       | Zoom out                                                                                      |
 | `Q`       | Zoom out **+** highlight connections between buttons, portals, and plants *(currently janky)* |
