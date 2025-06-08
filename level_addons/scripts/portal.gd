@@ -53,7 +53,7 @@ func recieve():
 
 func _on_body_exited(body: Node2D) -> void:
 	recieved = false
-	idle()
+	highlight()
 
 func trigger(next:Node2D = other_portal):
 	if next:
