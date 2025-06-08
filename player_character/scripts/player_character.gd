@@ -14,7 +14,6 @@ extends CharacterBody2D
 @onready var soundtrack = $Soundtrack
 @onready var item_slot = $ItemSlot
 @onready var camera = $Camera2D
-@onready var lung = $Lung
 signal player_death
 var rooted:bool = false
 var smoke_time:float = 10
@@ -41,7 +40,6 @@ func _process(delta: float) -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
-	lung.global_position = get_viewport().get_camera_2d().get_screen_center_position() - Vector2(60, 40)
 	var input_vector = Input.get_vector("left", "right", "up", "down", -1)
 	if rooted:
 		velocity = Vector2.ZERO
@@ -54,7 +52,8 @@ func _physics_process(delta: float) -> void:
 			velocity.x = lerp(velocity.x, input_vector.x * MAX_SPEED, 1)
 	
 	if velocity.length() != 0:
-		item_slot.position = input_vector * 8
+		item_slot.position = (input_vector * 8)
+		item_slot.position.y -= 8
 		if walk_sound.playing == false:
 			walk_sound.play()
 	else:
@@ -100,9 +99,9 @@ func smoke_now():
 		if smoke_time > 3:
 			smoke_warning_timer.start(smoke_time - 3)
 			warning_animation.play("none")
-			lung.update(10 - 3, smoke_time - 3,)
+			get_tree().call_group("lung_ui", "update", 10-3, smoke_time - 3)
 		else:
-			lung.update(1, 0)
+			get_tree().call_group("lung_ui", "update", 1, 0)
 		smoke_timer.start(smoke_time)
 		smoke.play("smoke")
 
