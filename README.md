@@ -51,8 +51,8 @@ But there's a catch:
 🚧 Roadmap
 
 Planned features:
-
-    More elaborate addiction mechanics (e.g., hallucinations, movement penalties)
+    
+    No smoke zone
 
     New enemies and puzzle types
 
