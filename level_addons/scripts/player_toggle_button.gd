@@ -26,17 +26,19 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player_character") and is_ready:
 		is_ready = false
 		if mode == 0:
-			if target0.has_method("trigger"):
-				target0.trigger(trigger_value0)
-				yellow_line.disable()
-				blue_line.enable()
+			if target0:
+				if target0.has_method("trigger"):
+					target0.trigger(trigger_value0)
+					yellow_line.disable()
+					blue_line.enable()
 			mode = 1
 			spright.frame = 1
 		elif mode ==1:
-			if target1.has_method("trigger"):
-				target1.trigger(trigger_value1)
-				blue_line.disable()
-				yellow_line.enable ()
+			if target1:
+				if target1.has_method("trigger"):
+					target1.trigger(trigger_value1)
+					blue_line.disable()
+					yellow_line.enable ()
 			mode = 0
 			spright.frame = 0
 
